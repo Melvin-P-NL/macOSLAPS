@@ -67,7 +67,7 @@ func PasswordGen(length: Int) -> String {
             random_password = String(random_password.shuffled())
         }
         // Generate a Randomized Password
-        while random_password.count <= length {
+        while random_password.count < length {
             let rand = arc4random_uniform(UInt32(passwordCharacters.count))
             random_password.append(passwordCharacters[Int(rand)])
             passwordCharacters.shuffle()
